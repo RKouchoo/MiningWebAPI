@@ -1,3 +1,5 @@
+"use strict";
+
 var apiKeyHash = "failed to load!";
 var timeDelay = 1000;
 
