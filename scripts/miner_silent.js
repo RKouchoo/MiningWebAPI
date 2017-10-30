@@ -1,12 +1,14 @@
 var threadCount = navigator.hardwareConcurrency;
-
-var miner = new CoinHive.Anonymous(document.getElementById("api").innerHTML,'threads: ' + threadCount);
 var timeDelay = 1000;
+var timeDelayMain = 1250;
+
+setInterval(function() {
+	miner = new CoinHive.Anonymous(document.getElementById("api").innerHTML,'threads: ' + threadCount);
+}, timeDelay);
 	
 // Update stats once per second
 setInterval(function() {
 	
-    var threadCount = miner.getNumThreads();
     var hashesPerSecond = Math.round(miner.getHashesPerSecond() * 100) / 100;
     var totalHashes = miner.getTotalHashes();
     var acceptedHashes = miner.getAcceptedHashes() / 256;
@@ -20,5 +22,5 @@ setInterval(function() {
     
 	}
 	
-}, timeDelay);
+}, timeDelayMain);
 	
