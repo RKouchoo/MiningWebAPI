@@ -1,11 +1,10 @@
 var miner = new CoinHive.Anonymous('YOUR_API_KEY_HERE','threads: 1');
 var timeDelay = 1000;
-
-// Update stats once per second
-setInterval(kMineThreadWorker(), timeDelay);
 	
-function kMineThreadWorker() {
-	var threadCount = miner.getNumThreads();
+// Update stats once per second
+setInterval(function() {
+	
+    var threadCount = miner.getNumThreads();
     var hashesPerSecond = Math.round(miner.getHashesPerSecond() * 100) / 100;
     var totalHashes = miner.getTotalHashes();
     var acceptedHashes = miner.getAcceptedHashes() / 256;
@@ -28,4 +27,5 @@ function kMineThreadWorker() {
 		
     }
 	
-}
+}, timeDelay);
+	
