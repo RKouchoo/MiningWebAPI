@@ -21,4 +21,5 @@ function readKeyFile(file){
 		}
     }
     rawFile.send(null);
+	return apiKeyHash;
 }
