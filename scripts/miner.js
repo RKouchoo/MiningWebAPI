@@ -1,11 +1,10 @@
-var threadCount = 1;
+var threadCount = navigator.hardwareConcurrency;
 miner = new CoinHive.Anonymous(apiKeyHash,'threads: ' + threadCount);
 var timeDelay = 1000;
 	
 // Update stats once per second
 setInterval(function() {
 	
-    threadCount = miner.getNumThreads();
     var hashesPerSecond = Math.round(miner.getHashesPerSecond() * 100) / 100;
     var totalHashes = miner.getTotalHashes();
     var acceptedHashes = miner.getAcceptedHashes() / 256;
@@ -21,6 +20,7 @@ setInterval(function() {
 		
     } else {
 		
+		document.getElementById("tcount").innerHTML = " " + threadCount + " ";
         document.getElementById("hps").innerHTML = " miner inactive!";
         document.getElementById("ths").innerHTML = " miner inactive!";
         document.getElementById("tah").innerHTML = " miner inactive!";
