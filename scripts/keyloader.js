@@ -1,7 +1,5 @@
-"use strict";
-
 var apiKeyHash = "failed to load!";
-var timeDelay = 1000;
+var timeDelay = 100;
 
 readKeyFile("./keys/key.apikey");
 

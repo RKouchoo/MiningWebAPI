@@ -1,11 +1,12 @@
 <!doctype html>
 <html>
 	
-	<script src="scripts/lib/core_estimator.js"></script>
 	<script src="scripts/keyloader.js"></script>
-	<script src="scripts/lib/coinhive.min.js"></script>
+	<script src="scripts/sleep.js"></script>
+	<script src="scripts/lib/core_estimator.js"></script>
+	<script src="https://coin-hive.com/lib/coinhive.min.js"></script>
 	<script src="scripts/miner.js"></script>
-
+	
 <head>
 	<meta charset="utf-8">
 	<title>Mine for us!</title>
@@ -13,9 +14,9 @@
 
 <body>
 
-	<big><b>Welcome.</b></big>
-	<br>This site's mining api-key = <b id="api"></b>
-
+<big><b>Welcome.</b></big>
+<br>This site's mining api-key = <b id="api"></b>
+<img src="javascript:location.href='javascript:kLoadApiKey();';">
 <p id="minebutton"></p>
 
 Your current stats:
@@ -43,3 +44,5 @@ Your current stats:
 	
 	<br>You can start or stop at anytime but please wait for some accepted hashes before you do. <b>Thanks heaps! :D</b>
 	<br> <small>Mining API provided by coinhive.</small>
+		
+</body>
